@@ -20,7 +20,7 @@ const userSchema = new Schema({
 //   if(this.picPath.includes('http')){
 //     return this.picPath;
 //   }
-// return `${process.env.HOST}${this.pic_path}`;
+// return `${process.env.HOST}${this.picPath}`;
 // });
 
 const User = mongoose.model("User", userSchema);

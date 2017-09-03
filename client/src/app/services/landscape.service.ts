@@ -4,12 +4,12 @@ import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Rx';
 
-export interface Place {
+export interface Landscape {
   _id: string
 }
 
 @Injectable()
-export class PlaceService {
+export class LandscapeService {
   BASE_URL: string = environment.apiUrl;
   options: object = { withCredentials: true };
   params = new URLSearchParams();
@@ -27,19 +27,19 @@ export class PlaceService {
   }
 
   show(id: string): Observable<object> {
-    return this.http.get(`${this.BASE_URL}/api/places/${id}`, this.options)
+    return this.http.get(`${this.BASE_URL}/api/landscapes/${id}`, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
-  update(id: string, place): Observable<object> {
-    return this.http.put(`${this.BASE_URL}/api/places/${id}`, place, this.options)
+  update(id: string, landscape): Observable<object> {
+    return this.http.put(`${this.BASE_URL}/api/landscapes/${id}`, landscape, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   remove(id: string): Observable<object> {
-    return this.http.delete(`${this.BASE_URL}/api/places/${id}`, this.options)
+    return this.http.delete(`${this.BASE_URL}/api/landscapes/${id}`, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
@@ -52,8 +52,8 @@ export class PlaceService {
     return dd;
   }
 
-  createFavorite(userId:string, placeId:string):Observable<object> {
-    return this.http.post(`${this.BASE_URL}/api/favorite`, {userId, placeId}, this.options)
+  createFavourite(userId:string, landscapeId:string):Observable<object> {
+    return this.http.post(`${this.BASE_URL}/api/favourite`, {userId, landscapeId}, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }

@@ -1,0 +1,79 @@
+header#top, .main-header {
+  background-image: url(/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  height: 70%;
+  top: 0;
+}
+
+.box img {
+  left: 50%;
+  margin-left: -50%;
+  position: absolute;
+  bottom: -35%;
+  width: 100%;
+}
+
+.btn-link-yo {
+  background: #be5254 none repeat scroll 0 0;
+  border-radius: 144px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 16px;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.btn-group {
+  margin-bottom: 30px;
+}
+
+.chart {
+  margin-top: 50px;
+}
+
+.boxy {
+  position: relative;
+  width: 80%;
+  Float: right;
+}
+
+.legend-box {
+  height: 500px;
+  width: 19.5%;
+  background-color: white;
+  Float: left;
+  height: 95%;
+  position: absolute;
+}
+
+.boxy-leg {
+  height: 85%;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.boxy-leg img {
+  position: absolute;
+  margin-left: -50%;
+}
+
+.row3 {
+  height: 500px;
+  position: relative;
+}

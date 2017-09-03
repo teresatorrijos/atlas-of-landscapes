@@ -1,1 +1,123 @@
-<app-navbar></app-navbar>
+<div class="top-content" style="position: relative; z-index: 0; ">
+
+  <app-navbar></app-navbar>
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 adjust-height text wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+          <h1>Discover <strong>The Invisible World</strong> Behind  <br>Your Photo!</h1>
+          <div class="description">
+            Explore the life inside the maps and create your own atlas.
+          </div>
+          <div class="top-big-link">
+            <a [routerLink]="['/new']" class="btn btn-link-1">Upload your photo</a>
+            <a href="https://www.facebook.com/teresa.torrijos.garcia" class="btn btn-link-2 scroll-link">Learn more</a>
+          </div>
+          <div class="vendors">
+            <a href="#"><span class="fa fa-apple"></span></a>
+            <a href="#"><span class="fa fa-android"></span></a>
+            <a href="#"><span class="fa fa-windows"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-us-container section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 about-us section-description wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <h2>How it works</h2>
+        <div class="divider-1 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"><span></span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 about-us-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="about-us-photo">
+          <!-- <img src="http://placemi.com/petnp/600x700" class="img-responsive"> -->
+          <!-- <div class="about-us-role">Marketing</div> -->
+        </div>
+        <h3>1</h3>
+        <p>Upload a photo and geolocate it</p>
+        <div class="about-us-social">
+          <a href="#"><span class="typcn typcn-social-facebook"></span></a>
+          <a href="#"><span class="typcn typcn-social-dribbble"></span></a>
+          <a href="#"><span class="typcn typcn-social-twitter"></span></a>
+        </div>
+      </div>
+      <div class="col-sm-4 about-us-box wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+        <div class="about-us-photo">
+          <!-- <img src="http://placemi.com/xruzn/600x700" class="img-responsive"> -->
+          <!-- <div class="about-us-role">Designer</div> -->
+        </div>
+        <h3>2</h3>
+        <p>Discover the cartography</p>
+        <div class="about-us-social">
+          <a href="#"><span class="typcn typcn-social-facebook"></span></a>
+          <a href="#"><span class="typcn typcn-social-dribbble"></span></a>
+          <a href="#"><span class="typcn typcn-social-twitter"></span></a>
+        </div>
+      </div>
+      <div class="col-sm-4 about-us-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="about-us-photo">
+          <!-- <img src="http://placemi.com/wctme/600x700" class="img-responsive"> -->
+          <!-- <div class="about-us-role">Developer</div> -->
+        </div>
+        <h3>3</h3>
+        <p>Share your landscapes atlas</p>
+        <div class="about-us-social">
+          <a href="#"><span class="typcn typcn-social-facebook"></span></a>
+          <a href="#"><span class="typcn typcn-social-dribbble"></span></a>
+          <a href="#"><span class="typcn typcn-social-twitter"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section_heading" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 about-us section-description wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <h2>Contact us</h2>
+        <div class="divider-1 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"><span></span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-12 txt_cen">
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p><br><br>
+        </div>
+        <form novalidate="" id="contactForm" name="sentMessage">
+          <div class="row">
+            <div class="control-group">
+              <div class="form-groupcol-xs-12 col-sm-6 col-md-6 col-lg-6  floating-label-form-group controls">
+                <input type="text" data-validation-required-message="Please enter your name." required="" id="name" placeholder="Your Name" class="form-control" aria-invalid="false">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 floating-label-form-group controls email_div">
+                <input type="email" data-validation-required-message="Please enter your email address." required="" id="email" placeholder="Your Email" class="form-control" aria-invalid="false">
+              </div>
+            </div>
+          </div>
+          <div class="row control-group">
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 floating-label-form-group controls">
+              <textarea data-validation-required-message="Please enter a message." required="" id="message" placeholder="Your Message" class="form-control" rows="5" aria-invalid="false"></textarea>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <div class="row">
+            <div class="form-groupcol-xs-12 col-sm-12 col-md-12 col-lg-12 img_cen_div">
+              <button class="btn btn-default form_send_btn btn-lg" type="submit">SEND MESSAGE <i class="fa fa-angle-right"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

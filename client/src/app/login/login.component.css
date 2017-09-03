@@ -1,0 +1,13 @@
+
+.text-center {
+  color: white;
+}
+
+.top-content {
+  background: rgba(0, 0, 0, 0) linear-gradient(135deg, #0c2e2f 0%, #08dfe5 100%) repeat scroll 0 0;
+  background-color: #0c2e2f;
+}
+
+.adjust-height {
+  height: 870px;
+}

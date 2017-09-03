@@ -1,4 +1,4 @@
-import { Injectable,EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -10,8 +10,7 @@ const baseURL = environment.apiUrl;
 export class SessionService {
 
   options: Object = {withCredentials:true};
-  user:object;
-
+  user: any;
 
   constructor(private http: Http) { }
 

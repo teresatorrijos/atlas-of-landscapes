@@ -1,0 +1,35 @@
+<div class="top-content2" style="position: relative; z-index: 0; ">
+
+  <app-navbar></app-navbar>
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 adjust-height text wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+          <h1>Create <strong>Your Landscape</strong> and <br>discover what it is behind!</h1>
+          <div class="description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud exercitation.
+          </div>
+          <div class="top-big-link">
+            <a [routerLink]="" target="_blank" class="btn btn-link-2 scroll-link">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="signup col s12">
+    <input id="imageUpload" class="hide" type="file" name="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
+      <label for="imageUpload" class="btn btn-link-1">Upload your photo here</label>
+    <!-- <label> Share something about this landscape, if you want. </label> -->
+    <input type="text" placeholder="Share something about this landscape" [(ngModel)]="newLandscape.pdescription" name="pdescription" />
+    <!-- <label> Add some tags... </label> -->
+    <input type="text" placeholder="Add some tags..." #tag />
+    <button id="add-button" (click)="addTag(tag.value); tag.value = ''"> Add </button>
+    <ul>
+      <li *ngFor="let tag of newLandscape.tags"> {{ tag }} </li>
+    </ul>
+    <small *ngIf="!newLandscape.tags.length"> This photo has no tags, yet. </small>
+    <button type="button" (click)="submit()"> Submit </button>
+  </form>
+</div>

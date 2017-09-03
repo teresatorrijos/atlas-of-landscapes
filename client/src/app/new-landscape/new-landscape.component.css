@@ -1,0 +1,80 @@
+.top-content2 {
+  background-color: #F98A68;
+}
+
+h1 {
+  padding-top: 100px;
+  color: white;
+}
+
+.animated {
+  text-align: left;
+}
+
+.signup {
+  position:absolute;
+  right: 20%;
+  top: 20%;
+  width: 500px;
+  padding: 30px 20px;
+  background-color: #80FFFFFF;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
+  color: white;
+}
+
+[type=text] {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+}
+
+.description {
+  color: white;
+}
+
+#add-button, #file-input {
+  display: inline-block;
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+  height: 50px;
+  font-weight: 400;
+  font-size: 1em;
+  border: 0.5px white solid;
+}
+
+[type=button] {
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  background-color: #0C2E2F;
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+[type='text']:focus {
+  outline: none;
+  border-color: #0C2E2F;
+}
+
+.btn-link-1 {
+  margin-bottom: 40px;
+}
+
+.btn-link-2 {
+  margin-top: 40px;
+}
+
+.hide{display:none;}

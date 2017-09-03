@@ -20,7 +20,7 @@
           <li><a href="#how-it-works" class="scroll-link">How it works</a></li>
           <li><a *ngIf="!user" class="scroll-link" [routerLink]="['/login']">Login</a></li>
           <li><a *ngIf="!user" href="/signup" class="scroll-link">Signup</a></li>
-          <li><a *ngIf="user" [routerLink]="['/user', session.user._id]" class="scroll-link">My Profile</a></li>
+          <li><a *ngIf="user" [routerLink]="['/user', user._id]" class="scroll-link">My Profile</a></li>
           <li><a *ngIf="user" class="scroll-link" (click)="logout()">Logout</a></li>
         </ul>
       </div>

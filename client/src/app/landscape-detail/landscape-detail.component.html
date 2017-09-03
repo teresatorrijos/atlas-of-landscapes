@@ -1,0 +1,45 @@
+<div *ngIf="landscape" class="box image-detail" style="position: relative; z-index: 0;">
+  <img width="100%" src="{{BASE_URL + landscape.picPath}}" />
+  <app-navbar></app-navbar>
+</div>
+
+<h3>{{landscape.locateDegree}}</h3>
+<!-- <p>{{landscape.pdescription}}</p> -->
+<!-- <p>Creator: {{landscape.creatorId}}</p> -->
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" name="button" class="btn btn-default" (click)="remove(landscape._id)">DELETE</button>
+  <button type="button" name="button" class="btn btn-default" (click)="showForm()">EDIT</button>
+  <div *ngIf="show">
+    <h1> Edit landscape </h1>
+    <form (ngSubmit)="editLandscape(landscape._id, myForm)" #myForm="ngForm">
+      <label> Personal Description </label>
+      <input type="text" [(ngModel)]="pdescription" name="pdescription" />
+      <button type="submit"> Edit landscape </button>
+    </form>
+    <p class="error"> {{ error }} </p>
+  </div>
+
+  <button class="btn btn-default" (click)="createFavourite(landscape._id)">
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+</button>
+</div>
+<div class="">
+  <button class="btn btn-link-yo" (click)="createGeoInfo()"> Discover the invisible </button>
+</div>
+<div *ngIf="showGeoInfo" class="chart">
+  <div *ngIf="maps">
+    <div *ngFor="let map of maps">
+      <div class="row3">
+        <div class="boxy">
+          <app-cartography [coordinates]="landscape.localizacion" [wmsURL]="map.wmsURL" [layerWMS]="map.layer" [index]="map.index" [zoom]="map.zoom"></app-cartography>
+        </div>
+        <div class="legend-box">
+          <h3>{{ map.title }}</h3>
+          <div class="boxy-leg">
+            <img [src]="map.legendURL" alt="" >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

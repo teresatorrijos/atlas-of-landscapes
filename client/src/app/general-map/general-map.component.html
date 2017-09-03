@@ -1,0 +1,19 @@
+<div class="container map">
+  <div class="field">
+    <p class="control ">
+      <input class="input form-control" placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search [formControl]="searchControl" size="100">
+    </p>
+  </div>
+</div>
+
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [scrollwheel]="false">
+  <div *ngFor="let location of locations">
+    <agm-marker *ngIf="location.localizacion" [latitude]="location.localizacion[0]" [longitude]="location.localizacion[1]">
+      <agm-info-window [disableAutoPan]="true">
+        <!-- <img src="location.picPath" alt="" height="20px"> -->
+
+        <a [routerLink]="['/landscapes',location._id]"> {{location.locateDegree}}</a>
+      </agm-info-window>
+    </agm-marker>
+  </div>
+</agm-map>

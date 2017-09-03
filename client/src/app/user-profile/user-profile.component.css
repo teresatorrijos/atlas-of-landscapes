@@ -1,0 +1,87 @@
+.btn-created {
+  display: inline-block;
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+  height: 50px;
+  font-weight: 400;
+  font-size: 1em;
+  border: 0.5px white solid;
+}
+
+.cuerpo {
+  font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.boxy {
+  margin-top: 100px;
+}
+
+.figure {
+  margin-top: 20px;
+}
+
+.img-thumbnail {
+  border-radius: 50%;
+}
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.thumbnail {
+  border: 0px;
+  margin: 40px 10px 0px 10px;
+}
+
+.block {
+  margin-top: 60px;
+}
+
+.black {
+  color: black;
+}
+
+.navbar-inverse ul.navbar-nav li a {
+  color: black;
+}
+
+.navbar-inverse ul.navbar-nav li a:focus {
+  color: black;
+}
+
+.navbar-inverse ul.navbar-nav li a:hover {
+  color: black;
+}
+
+.btn-link-2 {
+  background: white none repeat scroll 0 0;
+  border: 0.2px black solid;
+  border-radius: 144px;
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 16px;
+  padding: 8px 34px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-link-1 {
+  padding: 8px 34px 0;
+}
+
+.name {
+  color: black;
+}

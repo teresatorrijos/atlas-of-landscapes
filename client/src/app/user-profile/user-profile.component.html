@@ -1,0 +1,80 @@
+<div class="top-content" style="position: relative; z-index: 0; ">
+
+  <app-navbar></app-navbar>
+
+  <div class="cuerpo">
+    <div class="main-header container-fluid">
+      <div class="intro">
+        <div *ngIf="user.user" class="container text-center">
+          <img class="img-thumbnail" src="{{ BASE_URL + user.user.picPath}}" alt="" width="140">
+          <h1 class="name">{{user.user.username }}</h1>
+          <!-- <div class="name"> -->
+          <!-- <p>{{user.user.name }}</p> -->
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="container text-center">
+          <ul class="list-inline">
+            <li class="email"><i class="fa fa-envelope"></i><a href="#" style="color: white;">{{user.user.email}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-sm-6 container">
+      <div id="main-button" class=" btn-created" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button type="button" id="stars" class="btn btn-link-1" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="hidden-xs">Landscapes created</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" id="favourites" class="btn btn-link-2" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="hidden-xs">Favourite Landscapes</div>
+            </button>
+        </div>
+      </div>
+    </div>
+    <div class="boxy">
+      <div class="container profile-events">
+        <div class="tab-content">
+          <div *ngIf="user.landscapes" class="tab-pane fade in active" id="tab1">
+            <div *ngFor="let landscape of user.landscapes">
+
+              <div class="item frontend col-sm-3 col-xs-6  size-profile">
+                <div class="item-inner">
+                  <figure class="figure">
+                    <a [routerLink]="['/landscapes',landscape._id]">
+                <img class="img-portfolio img-responsive" src="{{landscape.picPath}}">
+                </a>
+                  </figure>
+                  <div class="content text-left">
+                    <h3>{{landscape.locateDegree}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="user.favourites" class="tab-pane fade in" id="tab2">
+            <div *ngFor="let favourite of user.favourites">
+              <div class="item frontend col-md-3 col-xs-6 size-profile">
+                <div class="item-inner">
+                  <figure class="figure">
+                    <a [routerLink]="['/landscapes',favourite._id]">
+                <img class="img-portfolio img-responsive" src="{{favourite.picPath}}">
+                </a>
+                  </figure>
+                  <div class="content text-left">
+                    <h3>{{favourite.locateDegree}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
