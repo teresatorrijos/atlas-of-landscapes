@@ -21,9 +21,8 @@
   <form class="signup col s12">
     <input id="imageUpload" class="hide" type="file" name="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
       <label for="imageUpload" class="btn btn-link-1">Upload your photo here</label>
-    <!-- <label> Share something about this landscape, if you want. </label> -->
+      <p *ngIf="noExif" >This image has no spatial attributes. <br>Choose another one!</p>
     <input type="text" placeholder="Share something about this landscape" [(ngModel)]="newLandscape.pdescription" name="pdescription" />
-    <!-- <label> Add some tags... </label> -->
     <input type="text" placeholder="Add some tags..." #tag />
     <button id="add-button" (click)="addTag(tag.value); tag.value = ''"> Add </button>
     <ul>

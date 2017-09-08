@@ -617,3 +617,23 @@ footer .mar_bot_top_ten a {
     display: none;
   }
 }
+
+.image-profile-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 360px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 7%;
+  left: 7%;
+
+  /*padding: 10px 5px;*/
+}
+
+.image-profile-wrapper img {
+  width: 60px;
+  height: 60px;
+  border-radius: 360px;
+  margin: 0px;
+  border: 3px solid rgba(255,255,255,.5);
+}

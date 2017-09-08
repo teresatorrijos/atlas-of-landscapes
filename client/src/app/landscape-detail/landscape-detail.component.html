@@ -1,12 +1,15 @@
 <div *ngIf="landscape" class="box image-detail" style="position: relative; z-index: 0;">
   <img width="100%" src="{{BASE_URL + landscape.picPath}}" />
   <app-navbar></app-navbar>
+  <a [routerLink]="['/user',user._id]" class="col-xs-3 image-profile-wrapper">
+    <img src="{{BASE_URL + landscape.creatorId.picPath}}" alt="">
+  </a>
 </div>
 
 <h3>{{landscape.locateDegree}}</h3>
-<!-- <p>{{landscape.pdescription}}</p> -->
-<!-- <p>Creator: {{landscape.creatorId}}</p> -->
-<div class="btn-group" role="group" aria-label="...">
+<p>{{landscape.pdescription}}</p>
+
+<div *ngIf="landscape.creatorId === user._id" class="btn-group" role="group" aria-label="...">
   <button type="button" name="button" class="btn btn-default" (click)="remove(landscape._id)">DELETE</button>
   <button type="button" name="button" class="btn btn-default" (click)="showForm()">EDIT</button>
   <div *ngIf="show">
@@ -35,9 +38,9 @@
         </div>
         <div class="legend-box">
           <h3>{{ map.title }}</h3>
-          <div class="boxy-leg">
+          <!-- <div class="boxy-leg">
             <img [src]="map.legendURL" alt="" >
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

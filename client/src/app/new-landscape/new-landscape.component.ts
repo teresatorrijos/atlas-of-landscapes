@@ -32,6 +32,7 @@ export class NewLandscapeComponent implements OnInit {
   localizacion: Array<number>;
   locateDegree: any;
   file: any;
+  noExif: boolean;
 
   constructor(private landscapeService: LandscapeService,
     private session: SessionService,
@@ -52,7 +53,12 @@ export class NewLandscapeComponent implements OnInit {
   }
 
   fileChangeEvent(e: any) {
-    this.file = e.target.files[0]
+    this.file = e.target.files[0];
+    EXIF.getData(this.file, () => {
+      if (!EXIF.getTag(this.file, "GPSLatitude"))
+        this.noExif = true;
+        this.file = undefined;
+    });
   }
 
   addTag(value) {

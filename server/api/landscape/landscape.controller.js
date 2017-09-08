@@ -34,11 +34,17 @@ module.exports = {
   },
 
   get: (req, res, next) => {
-    Landscape.findById(req.params.id).then(landscape => {
-        res.json(landscape);
+    Landscape.findById(req.params.id).populate('creatorId')
+      .exec()
+      .then(landscapeDetail => {
+        console.log(landscapeDetail);
+        res.json(landscapeDetail);
       })
-      .catch(e => res.json(e));
+      .reject(err => {
+        res.status(500).json(err);
+      });
   },
+
 
   edit: (req, res, next) => {
     const updates = {
