@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SessionService } from '../services/session.service';
 import { Router } from '@angular/router';
 import { LoggedinService } from '../services/loggedin.service';
@@ -11,6 +11,7 @@ import { LoggedinService } from '../services/loggedin.service';
 })
 
 export class NavbarComponent implements OnInit {
+  @Input() color: any;
   title = 'app';
   user: any;
   error: any;

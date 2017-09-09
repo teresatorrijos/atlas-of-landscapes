@@ -82,6 +82,6 @@ footer {
   padding: 8px 34px 0;
 }
 
-.name {
+.name, .email {
   color: black;
 }

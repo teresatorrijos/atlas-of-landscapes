@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <nav [style.color]="'blue'" role="navigation" class="navbar navbar-inverse navbar-no-bg">
+<nav role="navigation" class="navbar navbar-inverse navbar-no-bg">
     <div class="container">
       <div class="navbar-header">
         <button data-target="#top-navbar-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
@@ -9,22 +7,20 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-        <a href="/home" class="navbar-brand"><i class="fa fa-bullseye"></i></a>
-      <a href="/home">  <span class="main-name">  ATLAS OF LANDSCAPES </span></a>
+        <a href="/home" class="navbar-brand" [ngStyle]="{ 'color': color }"><i class="fa fa-bullseye"></i></a>
+      <a href="/home">  <span [ngStyle]="{ 'color': color }" class="main-name">  ATLAS OF LANDSCAPES </span></a>
 
       </div>
       <div id="top-navbar-1" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/atlas" class="scroll-link">Atlas</a></li>
-          <li><a href="/new" class="scroll-link">Upload a photo</a></li>
-          <li><a href="#how-it-works" class="scroll-link">How it works</a></li>
-          <li><a *ngIf="!user" class="scroll-link" [routerLink]="['/login']">Login</a></li>
-          <li><a *ngIf="!user" href="/signup" class="scroll-link">Signup</a></li>
-          <li><a *ngIf="user" [routerLink]="['/user', user._id]" class="scroll-link">My Profile</a></li>
-          <li><a *ngIf="user" class="scroll-link" (click)="logout()">Logout</a></li>
+          <li><a [ngStyle]="{ 'color': color }" href="/atlas" class="scroll-link">Atlas</a></li>
+          <li><a [ngStyle]="{ 'color': color }" href="/new" class="scroll-link">Upload a photo</a></li>
+          <li><a [ngStyle]="{ 'color': color }" href="#how-it-works" class="scroll-link">How it works</a></li>
+          <li><a *ngIf="!user" [ngStyle]="{ 'color': color }" class="scroll-link" [routerLink]="['/login']">Login</a></li>
+          <li><a *ngIf="!user" [ngStyle]="{ 'color': color }" href="/signup" class="scroll-link">Signup</a></li>
+          <li><a *ngIf="user" [ngStyle]="{ 'color': color }" [routerLink]="['/user', user._id]" class="scroll-link">My Profile</a></li>
+          <li><a *ngIf="user" [ngStyle]="{ 'color': color }" class="scroll-link" (click)="logout()">Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <a *ngIf="!user" class="navbar-item" [routerLink]="['/user/login']">

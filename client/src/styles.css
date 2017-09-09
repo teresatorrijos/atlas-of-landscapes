@@ -341,7 +341,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 
 .social_icon_list li a.fb_icon {
-  background: #3b5998 none repeat scroll 0 0;
+  background: #0C2E2F none repeat scroll 0 0;
 }
 
 .social_icon_list li a.twit_icon {
@@ -349,11 +349,11 @@ a, a:hover, a:focus, a:active, a.active {
 }
 
 .social_icon_list li a.gogle_plus_icon {
-  background: rgb(218, 72, 53) none repeat scroll 0 0;
+  background: rgb(72, 117, 180) none repeat scroll 0 0;
 }
 
 .social_icon_list li a.vimeo_icon {
-  background: rgb(1, 185, 255) none repeat scroll 0 0;
+  background: #6e5494 none repeat scroll 0 0;
 }
 
 .social_icon_list li a i, .social_icon_list li a i {

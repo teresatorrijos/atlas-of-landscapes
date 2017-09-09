@@ -1,6 +1,8 @@
-<div *ngIf="landscape" class="box image-detail" style="position: relative; z-index: 0;">
+<div *ngIf="landscape" class="box adjust-height wow fadeInUp animated" style="position: relative; z-index: 0;">
   <img width="100%" src="{{BASE_URL + landscape.picPath}}" />
+
   <app-navbar></app-navbar>
+
   <a [routerLink]="['/user',user._id]" class="col-xs-3 image-profile-wrapper">
     <img src="{{BASE_URL + landscape.creatorId.picPath}}" alt="">
   </a>

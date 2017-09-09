@@ -28,7 +28,7 @@ export class NewLandscapeComponent implements OnInit {
   landscape: any;
   feedback: any;
   user: any;
-  error: string;
+  error: any;
   localizacion: Array<number>;
   locateDegree: any;
   file: any;
@@ -44,7 +44,7 @@ export class NewLandscapeComponent implements OnInit {
     this.loggedin.getEmitter().subscribe(user => this.successCbUser(user));
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
-      this.router.navigate(['/']);
+      this.router.navigate(['/landscapes', JSON.parse(response).id]);
     };
 
     this.uploader.onErrorItem = (item, response, status, headers) => {
@@ -55,9 +55,10 @@ export class NewLandscapeComponent implements OnInit {
   fileChangeEvent(e: any) {
     this.file = e.target.files[0];
     EXIF.getData(this.file, () => {
-      if (!EXIF.getTag(this.file, "GPSLatitude"))
+      if (!EXIF.getTag(this.file, "GPSLatitude")) {
         this.noExif = true;
         this.file = undefined;
+      }
     });
   }
 
@@ -84,14 +85,13 @@ export class NewLandscapeComponent implements OnInit {
       };
       this.uploader.uploadAll();
     });
-    this.router.navigate(['/atlas']);
   }
 
   successCbUser(val) {
     this.user = val;
     this.error = null;
-
   }
+
   errorCb(err) {
     this.error = err;
     console.log(this.error)
@@ -101,6 +101,5 @@ export class NewLandscapeComponent implements OnInit {
   successCb(landscape) {
     this.landscape = landscape;
     this.error = null;
-    this.router.navigate(['/'])
   }
 }

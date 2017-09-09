@@ -13,6 +13,7 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./atlas.component.css']
 })
 export class AtlasComponent implements OnInit {
+  color: any;
   BASE_URL: string = environment.apiUrl;
   landscapes:Observable<Array<object>>;
   user:any;
@@ -21,6 +22,7 @@ export class AtlasComponent implements OnInit {
   constructor(private landscapeService: LandscapeService, private session:SessionService) { }
 
   ngOnInit() {
+    this.color = "black"
     this.searchControl = new FormControl();
 
 

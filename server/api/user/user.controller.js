@@ -4,6 +4,8 @@ const authController = express.Router();
 const passport = require("passport");
 const upload = require('../../config/multer');
 const User = require("./user.model");
+const Favourite = require("../favourites/favourite.model");
+const Landscape = require("../landscape/landscape.model");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
@@ -110,12 +112,26 @@ exports.logInUser = function(req, res, next) {
 
 exports.getUserProfile = function(req, res, next) {
   User.findById(req.params.id)
-    .then(userDetail => {
-      res.json(userDetail);
-    })
-    .reject(err => {
-      res.status(500).json(err);
-    });
+  .exec()
+  .then(user => {
+    Landscape.find({creatorId: user._id})
+         .exec()
+         .then(landscapes => {
+           Favourite.find({
+               userId: user._id
+             })
+             .populate('placeId')
+             .exec()
+             .then(favourites => {
+               res.json({
+                 user:user,
+                 landscapes: landscapes,
+                 favourites: favourites
+               });
+          });
+      });
+  })
+  .catch(e => next(e));
 };
 
 exports.logoutUser = function(req, res, next) {

@@ -5,32 +5,35 @@
   <div class="inner-bg">
     <div class="container">
       <div class="row">
-        <div class="col-sm-7 adjust-height text wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="col col-sm-7 adjust-height text wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
           <h1>Create <strong>Your Landscape</strong> and <br>discover what it is behind!</h1>
           <div class="description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud exercitation.
+            Landscape emerges from the interaction of diverse geographical, cartographic and poetical agents which intervene in its construction, and which have a reflection in the tangible space.
           </div>
           <div class="top-big-link">
             <a [routerLink]="" target="_blank" class="btn btn-link-2 scroll-link">Learn more</a>
           </div>
         </div>
+
+        <form class="form col col-sm-5">
+          <input id="imageUpload" class="hide" type="file" name="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
+          <label for="imageUpload" class="btn btn-link-1">Upload your photo here</label>
+          <div class="alert">
+            <small class="no-spatial" *ngIf="noExif">This image has no spatial attributes. Choose another one!</small>
+            <small *ngIf="!noExif &&  file">{{file.name}} </small>
+          </div>
+          <input class=margin type="text" placeholder="Share something about this landscape" [(ngModel)]="newLandscape.pdescription" name="pdescription" />
+          <input type="text" placeholder="Add some tags..." #tag />
+          <button id="add-button" (click)="addTag(tag.value); tag.value = ''"> Add </button>
+          <ul class="nav">
+            <li *ngFor="let tag of newLandscape.tags"> #{{ tag }} </li>
+          </ul>
+          <small *ngIf="!newLandscape.tags.length"> This photo has no tags, yet. </small>
+          <button type="button" (click)="submit()"> Submit </button>
+        </form>
       </div>
     </div>
   </div>
-
-  <form class="signup col s12">
-    <input id="imageUpload" class="hide" type="file" name="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
-      <label for="imageUpload" class="btn btn-link-1">Upload your photo here</label>
-      <p *ngIf="noExif" >This image has no spatial attributes. <br>Choose another one!</p>
-    <input type="text" placeholder="Share something about this landscape" [(ngModel)]="newLandscape.pdescription" name="pdescription" />
-    <input type="text" placeholder="Add some tags..." #tag />
-    <button id="add-button" (click)="addTag(tag.value); tag.value = ''"> Add </button>
-    <ul>
-      <li *ngFor="let tag of newLandscape.tags"> {{ tag }} </li>
-    </ul>
-    <small *ngIf="!newLandscape.tags.length"> This photo has no tags, yet. </small>
-    <button type="button" (click)="submit()"> Submit </button>
-  </form>
 </div>
 
 <app-footer></app-footer>
