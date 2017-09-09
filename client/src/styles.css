@@ -612,7 +612,7 @@ footer .mar_bot_top_ten a {
   transform: translate(-50%, -50%)
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1068px) {
   .main-name {
     display: none;
   }

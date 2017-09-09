@@ -33,7 +33,7 @@ export class LandscapeDetailComponent implements OnInit {
 
     ) {
       activeRoute.params.mergeMap(p => landscapeService.show(p.id))
-        .subscribe((landscape: Object) => {
+        .subscribe((landscape: any) => {
           console.log(landscape);
           this.landscape = landscape;
         });
