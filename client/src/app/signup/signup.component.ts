@@ -60,6 +60,6 @@ export class SignupComponent implements OnInit {
     this.user = user;
     this.error = null;
     this.loggedin.checkLogged(user);
-    this.router.navigate(['/'])
+    this.router.navigate(['user/'+this.user._id])
   }
 }

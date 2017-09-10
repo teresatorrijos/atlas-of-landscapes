@@ -16,7 +16,7 @@
         </div>
 
         <form class="form col col-sm-5">
-          <input id="imageUpload" class="hide" type="file" name="file" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
+          <input id="imageUpload" class="hide" type="file" name="file" accept="image/gif, image/jpeg" (change)="fileChangeEvent($event)" ng2FileSelect [uploader]="uploader" />
           <label for="imageUpload" class="btn btn-link-1">Upload your photo here</label>
           <div class="alert">
             <small class="no-spatial" *ngIf="noExif">This image has no spatial attributes. Choose another one!</small>
