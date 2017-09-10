@@ -40,6 +40,6 @@ export class LoginComponent implements OnInit {
     this.user = user;
     this.error = null;
     this.loggedin.checkLogged(user);
-    this.router.navigate(['user/'+this.user._id])
+    this.router.navigate(['/atlas'])
   }
 }

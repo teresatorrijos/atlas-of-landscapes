@@ -22,7 +22,7 @@ module.exports = {
   },
 
   list: (req, res) => {
-    FavouriteRelation.find({ landscapeId: req.params.landscapeId })
+    Favourite.find({ landscapeId: req.params.landscapeId })
       .populate('userId').exec()
       .then( users => {
         res.json(users);

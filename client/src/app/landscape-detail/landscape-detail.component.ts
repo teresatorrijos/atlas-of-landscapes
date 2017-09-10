@@ -16,61 +16,64 @@ import { environment } from '../../environments/environment';
   providers: [MapService]
 })
 export class LandscapeDetailComponent implements OnInit {
-    BASE_URL: string = environment.apiUrl;
-    landscape: any;
-    show: boolean;
-    showGeoInfo: boolean;
-    maps: any;
-    user: any;
+  BASE_URL: string = environment.apiUrl;
+  landscape: any;
+  show: boolean;
+  showGeoInfo: boolean;
+  maps: any;
+  user: any;
 
-    constructor(
-      private landscapeService: LandscapeService,
-      private activeRoute: ActivatedRoute,
-      private router: Router,
-      private session: SessionService,
-      private loggedin: LoggedinService,
-      private mapService: MapService
+  constructor(
+    private landscapeService: LandscapeService,
+    private activeRoute: ActivatedRoute,
+    private router: Router,
+    private session: SessionService,
+    private loggedin: LoggedinService,
+    private mapService: MapService
 
-    ) {
-      activeRoute.params.mergeMap(p => landscapeService.show(p.id))
-        .subscribe((landscape: any) => {
-          console.log(landscape);
-          this.landscape = landscape;
-        });
-      this.show = false;
-      this.showGeoInfo = false;
-    }
-
-    ngOnInit() {
-    this.session.isLoggedIn().subscribe(user => this.successCbUser(user));
+  ) {
+    this.show = false;
+    this.showGeoInfo = false;
   }
 
-    showForm() {
-      this.show = !this.show;
-    }
-
-    editLandscape(id, myForm) {
-      this.landscapeService.update(id, myForm.value).subscribe((landscape) => console.log(landscape));
-    }
-
-    remove(id) {
-      this.landscapeService.remove(id).subscribe();
-      this.router.navigate(['/atlas']);
-    }
-
-    createFavourite(landscape) {
-      this.landscapeService.createFavourite(this.session.user._id, landscape).subscribe(favourite => console.log(favourite));
-    }
-
-    createGeoInfo() {
-      this.showGeoInfo = !this.showGeoInfo;
-      this.mapService.indexMaps().subscribe(maps => {
-        this.maps = maps;
-        console.log(this.maps);
+  ngOnInit() {
+    this.activeRoute.params
+      .mergeMap(p => this.landscapeService.show(p.id))
+      .subscribe(landscape => {
+        this.landscape = landscape;
+        console.log(this.landscape);
       });
-    }
 
-    successCbUser(val) {
+      this.session.isLoggedIn().subscribe(user => this.successCbUser(user));
+  }
+
+  showForm() {
+    this.show = !this.show;
+  }
+
+  editLandscape(id, myForm) {
+    this.landscapeService.update(id, myForm.value).subscribe((landscape) => console.log(landscape));
+  }
+
+  remove(id) {
+    this.landscapeService.remove(id).subscribe();
+    this.router.navigate(['/atlas']);
+  }
+
+  createFavourite() {
+    this.landscapeService.createFavourite(this.user._id, this.landscape._id).subscribe(favourite => console.log(favourite));
+  }
+
+  createGeoInfo() {
+    this.showGeoInfo = !this.showGeoInfo;
+    this.mapService.indexMaps().subscribe(maps => {
+      this.maps = maps;
+      console.log(this.maps);
+    });
+  }
+
+  successCbUser(val) {
     this.user = val;
   }
-  }
+
+}

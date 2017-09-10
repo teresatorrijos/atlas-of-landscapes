@@ -23,10 +23,11 @@
     </form>
     <p class="error"> {{ error }} </p>
   </div>
-
-  <button class="btn btn-default" (click)="createFavourite(landscape._id)">
-  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-</button>
+</div>
+<div *ngIf="landscape.creatorId._id !== user._id" class="btn-group" role="group" aria-label="...">
+  <button class="btn btn-default" (click)="createFavourite()">
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  </button>
 </div>
 <div class="">
   <button class="btn btn-link-yo" (click)="createGeoInfo()"> Discover the invisible </button>
@@ -41,7 +42,7 @@
         <div class="legend-box">
           <h3>{{ map.title }}</h3>
           <div class="boxy-leg">
-            <img [src]="map.legendURL" alt="" >
+            <img [src]="map.legendURL" alt="">
           </div>
         </div>
       </div>

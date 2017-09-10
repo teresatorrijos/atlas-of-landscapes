@@ -88,7 +88,6 @@ exports.createUser = function(req, res, next) {
 };
 
 exports.logInUser = function(req, res, next) {
-  console.log(req.body);
 
   passport.authenticate('local', function(err, user, info) {
     if (err) {
@@ -120,11 +119,11 @@ exports.getUserProfile = function(req, res, next) {
            Favourite.find({
                userId: user._id
              })
-             .populate('placeId')
+             .populate('landscapeId')
              .exec()
              .then(favourites => {
                res.json({
-                 user:user,
+                 user: user,
                  landscapes: landscapes,
                  favourites: favourites
                });

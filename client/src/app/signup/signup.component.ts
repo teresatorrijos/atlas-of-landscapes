@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
-      this.router.navigate(['/']);
+      this.router.navigate(['/atlas']);
     }
     this.uploader.onErrorItem = (item, response, status, headers) => {
       this.feedback = JSON.parse(response).message;
@@ -60,6 +60,6 @@ export class SignupComponent implements OnInit {
     this.user = user;
     this.error = null;
     this.loggedin.checkLogged(user);
-    this.router.navigate(['user/'+this.user._id])
+    this.router.navigate(['/atlas']);
   }
 }

@@ -57,5 +57,5 @@ export class UserProfileComponent implements OnInit {
   successCbUser(val) {
   this.userSession = val;
   this.error = null;
-}
+  }
 }

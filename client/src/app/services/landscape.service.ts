@@ -52,9 +52,10 @@ export class LandscapeService {
     return dd;
   }
 
-  createFavourite(userId:string, landscapeId:string):Observable<object> {
-    return this.http.post(`${this.BASE_URL}/api/favourite`, {userId, landscapeId}, this.options)
+  createFavourite(userId: any, landscapeId: any): Observable<object> {
+    return this.http.post(`${this.BASE_URL}/api/favourite`, { userId, landscapeId }, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }
+
 }

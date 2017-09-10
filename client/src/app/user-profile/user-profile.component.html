@@ -19,7 +19,7 @@
 
             <a class="email" href="mailto:{{user.user.email}}">
               <i class="fa fa-envelope"></i> {{user.user.email}}</a>
-              
+
           </li>
         </ul>
       </div>
@@ -44,11 +44,10 @@
       <div class="tab-content">
         <div *ngIf="user.landscapes" class="tab-pane fade in active" id="tab1">
           <div *ngFor="let landscape of user.landscapes">
-
             <div class="item frontend col-sm-3 col-xs-6  size-profile">
               <div class="item-inner">
                 <figure class="figure">
-                  <a [routerLink]="['/landscapes',landscape._id]">
+                  <a [routerLink]="['/landscapes', landscape._id]">
                 <img class="img-portfolio img-responsive" src="{{BASE_URL + landscape.picPath}}">
                 </a>
                 </figure>
@@ -64,12 +63,12 @@
             <div class="item frontend col-md-3 col-xs-6 size-profile">
               <div class="item-inner">
                 <figure class="figure">
-                  <a [routerLink]="['/landscapes',favourite._id]">
-                <img class="img-portfolio img-responsive" src="{{favourite.picPath}}">
+                  <a [routerLink]="['/landscapes', favourite.landscapeId._id]">
+                <img class="img-portfolio img-responsive" src="{{BASE_URL + favourite.landscapeId.picPath}}">
                 </a>
                 </figure>
                 <div class="content text-left">
-                  <h3>{{favourite.locateDegree}}</h3>
+                  <h3>{{favourite.landscapeId.locateDegree}}</h3>
                 </div>
               </div>
             </div>
