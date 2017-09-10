@@ -72,7 +72,7 @@ app.use((req, res, next)=>{
 require('./routes')(app);
 // catch 404 and forward to error handler
 app.all('/*', function(req, res) {
-  res.sendfile('./index.html');
+  res.sendfile(__dirname + '/public/index.html');
 });
 app.use((req, res, next) => {
   const err = new Error('Not Found');
