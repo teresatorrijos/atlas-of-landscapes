@@ -56,8 +56,7 @@ export class LandscapeDetailComponent implements OnInit {
   }
 
   remove(id) {
-    this.landscapeService.remove(id).subscribe();
-    this.router.navigate(['/atlas']);
+    this.landscapeService.remove(id).subscribe(l => this.router.navigate(['/atlas']));
   }
 
   createFavourite() {

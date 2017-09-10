@@ -1,26 +1,21 @@
+<app-navbar [color]="color"></app-navbar>
 
-  <app-navbar [color]="color"></app-navbar>
-  <!-- [routerLink]="['/user', session.user._id]" -->
-
-  <div class="container">
-    <div class="row block">
-      <div *ngIf="(landscapes)">
-        <div *ngFor="let landscape of landscapes" class="col-sm-6 col-md-4">
-          <a [routerLink]="['/landscapes',landscape._id]" class="thumbnail boxy">
-        <img class="imageFade" src="{{BASE_URL + landscape.picPath }}" alt="..." >
+<div class="container">
+  <div class="row block">
+    <div *ngIf="(landscapes)">
+      <div *ngFor="let landscape of landscapes" class="col-sm-6 col-md-4">
+        <a [routerLink]="['/landscapes',landscape._id]" class="thumbnail boxy">
+        <img class="imageFade" src="{{BASE_URL + landscape.picPath }}">
         <div class="overlayFade">
-          <div class="textFade"> <h6>  {{ landscape.locateDegree }}  </h6> </div>
+          <div class="textFade">
+            <h6> {{ landscape.locateDegree }} </h6> 
+          </div>
         </div>
       </a>
-          <!-- <div class="caption"> -->
-          <!-- <h6> <a href="#"> {{ landscape.locateDegree }}  </a> </h6> -->
-          <!-- <p>{{ landscape.pdescription }}</p> -->
-          <!-- <a [routerLink]="['/landscapes', landscape._id]" class="btn btn-primary" role="button">View Details</a> -->
-          <!-- </div> -->
-        </div>
       </div>
     </div>
   </div>
+</div>
 
 
 <app-general-map></app-general-map>
