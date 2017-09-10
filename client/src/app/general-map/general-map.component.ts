@@ -5,6 +5,7 @@ import {AgmCoreModule, MapsAPILoader} from '@agm/core';
 import { FormControl } from "@angular/forms";
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-general-map',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./general-map.component.css']
 })
 export class GeneralMapComponent implements OnInit {
+  BASE_URL: string = environment.apiUrl;
   public latitude: number;
   public longitude: number;
   public searchControl: FormControl;

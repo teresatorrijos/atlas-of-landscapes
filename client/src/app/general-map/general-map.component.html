@@ -10,9 +10,12 @@
   <div *ngFor="let location of locations">
     <agm-marker *ngIf="location.localizacion" [latitude]="location.localizacion[0]" [longitude]="location.localizacion[1]">
       <agm-info-window [disableAutoPan]="true">
-        <!-- <img src="location.picPath" alt="" height="20px"> -->
-
-        <a [routerLink]="['/landscapes',location._id]"> {{location.locateDegree}}</a>
+        <a [routerLink]="['/landscapes',location._id]">
+          <img src="{{ BASE_URL + location.picPath }}" alt="" height="80px">
+          <div>
+            <p> {{location.locateDegree}}</p>
+          </div>
+        </a>
       </agm-info-window>
     </agm-marker>
   </div>
