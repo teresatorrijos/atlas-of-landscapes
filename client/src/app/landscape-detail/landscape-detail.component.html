@@ -3,7 +3,7 @@
 
   <app-navbar></app-navbar>
 
-  <a [routerLink]="['/user',user._id]" class="col-xs-3 image-profile-wrapper">
+  <a [routerLink]="['/user', landscape.creatorId._id]" class="col-xs-3 image-profile-wrapper">
     <img src="{{BASE_URL + landscape.creatorId.picPath}}" alt="">
   </a>
 </div>

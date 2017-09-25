@@ -31,7 +31,7 @@ mongoose.connect(dbURL)
       legendURL: "http://www.ign.es/wms-inspire/mdt/leyendas/EL.GridCoverage.Default.png"
     }, {
       index: "3",
-      zoom: 100,
+      zoom: 8,
       title: "Solar Radiation",
       description: "Servicio Web de Mapas conforme Inspire ISO19128/WMS1.3.0 que permite acceder a Modelos Digitales del Terreno de España en diversos sistemas de referencia: Modelo Digital de Elevaciones, Modelo Digital de Pendientes, Modelo Digital de Orientaciones y Relieve. Contiene una capa que pertenece al Tema de Elevaciones del Anexo II de Inspire y del Anexo I de LISIGE.",
       wmsURL: "http://adrase.ceta-ciemat.es/geoserver/Portalgeosolar/wms?",

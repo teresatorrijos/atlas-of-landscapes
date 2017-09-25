@@ -25,11 +25,6 @@ import { Component, OnInit, Input } from '@angular/core';
         scrollWheelZoom: false,
       });
 
-      // var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
-      //   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      //   maxZoom: 18
-      // }).addTo(this.map);
-
       var wmsLayer = L.tileLayer.wms(this.wmsURL, {
           layers: this.layerWMS
       }).addTo(this.map);
@@ -44,7 +39,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
       }).on('click',
         (data) => {
-          // alert("I have a click.")
         } ).addTo(this.map)
     }
   }
