@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
-      this.router.navigate(['/atlas']);
+      this.router.navigate(['/new']);
     }
     this.uploader.onErrorItem = (item, response, status, headers) => {
       this.feedback = JSON.parse(response).message;
@@ -46,7 +46,6 @@ export class SignupComponent implements OnInit {
       form.append('email', this.formInfo.email);
     };
     this.uploader.uploadAll();
-    this.router.navigate(['/']);
     console.log(`${this.formInfo.username} is logged`)
   }
 
@@ -60,6 +59,5 @@ export class SignupComponent implements OnInit {
     this.user = user;
     this.error = null;
     this.loggedin.checkLogged(user);
-    this.router.navigate(['/atlas']);
   }
 }

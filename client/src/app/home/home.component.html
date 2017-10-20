@@ -11,8 +11,9 @@
             Explore the life inside the maps and create your own atlas.
           </div>
           <div class="top-big-link">
-            <a [routerLink]="['/new']" class="btn btn-link-1">Upload your photo</a>
-            <a href="https://www.facebook.com/teresa.torrijos.garcia" class="btn btn-link-2 scroll-link">Learn more</a>
+            <a *ngIf="user" [routerLink]="['/new']" class="btn btn-link-1">Upload your photo</a>
+            <a *ngIf="!user" [routerLink]="['/login']" class="btn btn-link-1">Upload your photo</a>
+            <a [routerLink]="['/atlas']" class="btn btn-link-2 scroll-link">Visit the atlas</a>
           </div>
           <div class="vendors">
             <a href="#"><span class="fa fa-apple"></span></a>
@@ -24,7 +25,7 @@
     </div>
   </div>
 </div>
-<div class="about-us-container section-container">
+<div  id="how-it-works" class="about-us-container section-container">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 about-us section-description wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
@@ -34,10 +35,6 @@
     </div>
     <div class="row">
       <div class="col-sm-4 about-us-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-        <div class="about-us-photo">
-          <!-- <img src="http://placemi.com/petnp/600x700" class="img-responsive"> -->
-          <!-- <div class="about-us-role">Marketing</div> -->
-        </div>
         <h3>1</h3>
         <p>Upload a photo and geolocate it</p>
         <div class="about-us-social">
@@ -48,8 +45,6 @@
       </div>
       <div class="col-sm-4 about-us-box wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
         <div class="about-us-photo">
-          <!-- <img src="http://placemi.com/xruzn/600x700" class="img-responsive"> -->
-          <!-- <div class="about-us-role">Designer</div> -->
         </div>
         <h3>2</h3>
         <p>Discover the cartography</p>
@@ -61,8 +56,8 @@
       </div>
       <div class="col-sm-4 about-us-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
         <div class="about-us-photo">
-          <!-- <img src="http://placemi.com/wctme/600x700" class="img-responsive"> -->
-          <!-- <div class="about-us-role">Developer</div> -->
+          <!-- <img src="" class="img-responsive"> -->
+          <!-- <div class="about-us-role">...</div> -->
         </div>
         <h3>3</h3>
         <p>Share your landscapes atlas</p>

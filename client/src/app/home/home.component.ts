@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggedinService } from '../services/loggedin.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  user: any;
 
-  constructor() { }
+  constructor(private loggedin: LoggedinService) {
+    loggedin.getEmitter().subscribe((user) => { this.user = user });
+  }
 
   ngOnInit() {
   }
