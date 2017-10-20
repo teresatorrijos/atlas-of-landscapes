@@ -11,7 +11,7 @@
 <h3>{{landscape.locateDegree}}</h3>
 <p>{{landscape.pdescription}}</p>
 
-<div *ngIf="landscape.creatorId._id === user._id" class="btn-group" role="group" aria-label="...">
+<div *ngIf="user && landscape.creatorId._id === user._id" class="btn-group" role="group" aria-label="...">
   <button type="button" name="button" class="btn btn-default" (click)="remove(landscape._id)">DELETE</button>
   <button type="button" name="button" class="btn btn-default" (click)="showForm()">EDIT</button>
   <div *ngIf="show">
@@ -24,7 +24,7 @@
     <p class="error"> {{ error }} </p>
   </div>
 </div>
-<div *ngIf="landscape.creatorId._id !== user._id" class="btn-group" role="group" aria-label="...">
+<div *ngIf="user && landscape.creatorId._id !== user._id" class="btn-group" role="group" aria-label="...">
   <button class="btn btn-default" (click)="createFavourite()">
     <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
   </button>
